@@ -49,7 +49,7 @@ SessionManagementScreen {
             placeholderTextColor: "white"
             background: Rectangle {
                 radius: 3
-                border.color: "#0078D4"
+                border.color: "#336541"
                 border.width: 2
                 color: "#3d3d3d"
             }
@@ -59,7 +59,9 @@ SessionManagementScreen {
     PlasmaComponents.TextField {
         id: passwordBox
         Layout.fillWidth: true
-        font.pointSize: fontSize + 1
+        Layout.minimumHeight: 30
+        implicitHeight: usernameFontSize * 2.85
+        font.pointSize: usernameFontSize * 2
         opacity: passwordFieldOutlined ? 1.0 : 1.0
         placeholderText: config.PasswordFieldPlaceholderText == "Password" ? i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password") : config.PasswordFieldPlaceholderText
         focus: !showUsernamePrompt || lastUserName
@@ -73,7 +75,7 @@ SessionManagementScreen {
             passwordCharacter: config.PasswordFieldCharacter == "" ? "●" : config.PasswordFieldCharacter
             background: Rectangle {
                 radius: 3
-                border.color: "#0078D4"
+                border.color: "#336541"
                 border.width: 2
                 color: "#3d3d3d"
             }
